@@ -1,0 +1,192 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%		PLANTILLA LATEX PARA PRESENTACIONES
+%%%%				LATEX BEAMER TEMPLATE
+%%%%	
+%%%%	Autor	: Carlos Gonzalez Cortes
+%%%%	Correo	: carlgonz@ug.uchile.cl
+%%%%	Version	: 1.0
+%%%%
+%%%%	Notas	: Este codigo se entrega tal cual es y sin
+%%%%			  ningun tipo de garantia. Sientase libre de
+%%%%			  modificar y compartir.(acentos omitidos en
+%%%%			  los comentarios por compatibilidad)
+%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[10pt]{beamer}
+\usetheme{Frankfurt}
+
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+
+\usepackage{url}
+
+\usepackage{listings} %Para codigo fuente
+\lstset{language=Matlab, numbers=left, numberstyle=\tiny, tabsize=4,framexleftmargin=5mm, basicstyle=\small,breaklines=true}
+
+
+% --------------- ---------DATOS --------------------------------------------
+\title{Titulo de la presentación}
+\author[Autor]{Autor}
+\institute[Universidad de Chile]{Universidad de Chile}
+\logo{\includegraphics[scale=0.05]{img/escudoU.pdf}}
+\date[\today]{}
+
+\begin{document}
+
+% --------------- ---------PORTADA --------------------------------------------
+
+\begin{frame}
+	\titlepage %Titulo
+	
+	%Una imagen en la portada
+	\begin{center}
+		\includegraphics[scale=0.2]{img/fcfm.png}
+	\end{center}
+\end{frame}
+
+% --------------- ---------INDICE --------------------------------------------
+
+\begin{frame}{Contenido}
+\tableofcontents
+\end{frame}
+
+% ------------------------ SLIDE 1 --------------------------------------------
+
+%Construyendo el indice
+\section{Entrada en índice, sección 1 }
+\subsection{Entrada en índice, subsección 1}
+
+%Titulo de la diapositiva
+\begin{frame}{Diapositiva 1: Ejemplos}
+	
+	% Agregar un bloque
+	\begin{block}{Un bloque}
+		Texto del bloque
+	\end{block}
+	
+	%Agregar una lista
+	\vspace{1cm} %Un espacio vertical
+	Una lista
+	\begin{itemize}
+		\item Item 1
+		\item Item 2
+		\item Item 3
+	\end{itemize}
+
+\end{frame}
+
+% ------------------------ SLIDE 2 --------------------------------------------
+%Construyendo el indice
+\subsection{Entrada en indice, sección 2 }
+
+%Titulo de la diapositiva
+\begin{frame}{Diapositiva 2: Imágenes}
+
+%Usando un EXAMPLE-BLOCK
+	\begin{exampleblock}{Esto es un ExampleBlock}
+	El escudo de la Universidad de Chile\\
+	
+%Agregando una IMAGEN
+	\begin{center}
+		\includegraphics[scale=0.08]{img/escudoU.pdf}
+	\end{center}
+	\end{exampleblock}
+\end{frame}
+
+% ------------------------ SLIDE 3 --------------------------------------------
+%Indice
+\section{Sección 3}
+
+%Titulo de la diapositiva
+\begin{frame}{Dispositiva 3: Animación}
+
+%Ejemplo de animacion, usar <+->
+	\begin{exampleblock}{Primer bloque}<+->
+		Ejemplo de animación
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Segundo bloque}<+->
+		Ejemplo de animación
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Tercer bloque}<+->
+		Ejemplo de animación
+	\end{exampleblock}
+\end{frame}
+
+% ------------------------ SLIDE 4 --------------------------------------------
+%Indice
+\section{Sección 4}
+
+%Titulo de la diapositiva
+\begin{frame}{Diapositiva 4: Dos columnas}
+
+\begin{center}
+	Una diapositiva puede ser dividida en varias columnas
+\end{center}
+
+%Una diapositiva con dos columnas
+	\begin{columns}
+		%Columna Izquierda
+		\column[t]{6cm}
+			Columna izquierda, contiene una lista
+			\begin{enumerate}
+				\item Item 1
+				\item Item 2
+				\item Item 3
+			\end{enumerate}
+
+		%Columna Derecha
+		\column[t]{6cm}
+			Columna derecha, contiene una imagen
+			\begin{center}
+				\includegraphics[scale=0.2]{img/fcfm.png}
+			\end{center}
+	\end{columns}
+\end{frame}
+
+
+% ------------------------ SLIDE CC --------------------------------------------
+% Entrada del indice
+\section{CC}
+
+%Diapositiva sin titulo
+\begin{frame}
+	\begin{center} \includegraphics[scale=1]{img/cc.png} \end{center}
+	\vspace*{1cm}
+	\begin{center}
+	\textbf{Plantilla para presentaciones en Latex-Beamer por Carlos González Cortés} se encuentra bajo una Licencia Creative Commons Atribución-NoComercial-LicenciarIgual 3.0 Unported. \end{center}
+\end{frame}
+
+
+\end{document} 
+
+% ============================= FRAME ==============================%
+%\begin{frame}{Title}
+%	\begin{columns}
+%		\column[t]{6cm}
+%		\column[t]{6cm}
+%	\end{columns}
+%\end{frame}
+% ===================================================================%
+
+
+% % ============================= IMAGEN ==============================%
+% \texttt{\begin{figure}[ht!]
+% \sf
+% \centering
+% \fbox{\includegraphics[scale=1.0]{img/circuito_segundo_diseno.jpg}}
+% \caption{Circuito del segundo diseño}\label{circt_segundo_dis}
+% \end{figure}}
+% % ===================================================================%
+% 
+% % ============================= CODIGO ==============================%
+% \begin{lstlisting}[caption={\sf codigo},label=codigo,frame=trBL]
+% 
+% \end{lstlisting}
+% % ===================================================================%
+%\lstinputlisting[caption={\sf codigo},label=codigo,frame=trBL]{sourceCode/HelloWorld.java}
